@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple CRUD App</title>
+</head>
+<body>
+  <h2>Simple CRUD (Node.js + HTML)</h2>
+
+  <!-- Create Item -->
+  <form action="/create" method="POST">
+    <input type="text" name="name" placeholder="Enter name" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <h3>Items:</h3>
+  <ul id="itemList"></ul>
+
+  <!-- Update Form -->
+  <h4>Update Item</h4>
+  <form action="/update" method="POST">
+    <input type="number" name="id" placeholder="Item ID" required>
+    <input type="text" name="name" placeholder="New Name" required>
+    <button type="submit">Update</button>
+  </form>
+
+  <!-- Delete Form -->
+  <h4>Delete Item</h4>
+  <form action="/delete" method="POST">
+    <input type="number" name="id" placeholder="Item ID" required>
+    <button type="submit">Delete</button>
+  </form>
+
+  <script>
+    // Fetch and display items
+    fetch('/items')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('itemList');
+        list.innerHTML = '';
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `ID: ${item.id} - ${item.name}`;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="utf-8"> 
+  <title>Mobile Registration</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <!-- jQuery Mobile --> 
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> 
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+  <style> 
+    .ui-content { 
+      padding: 20px; 
+    } 
+    .form-title { 
+      text-align: center; 
+      font-weight: bold; 
+      font-size: 1.5em; 
+      margin: 15px 0; 
+      color: #333; 
+    } 
+    label { 
+      font-weight: bold; 
+    } 
+    .ui-btn { 
+      background: #4CAF50; 
+      border: none; 
+      color: white; 
+    } 
+  </style> 
+</head> 
+<body> 
+<div data-role="page" id="registration"> 
+  <div data-role="header" data-theme="b"> 
+    <h1>Register</h1> 
+  </div> 
+  <div role="main" class="ui-content"> 
+    <div class="form-title">Create Your Account</div> 
+    <form> 
+      <label for="fullname">Full Name:</label> 
+      <input type="text" name="fullname" id="fullname" placeholder="John Doe"> 
+      <label for="email">Email:</label> 
+      <input type="email" name="email" id="email" placeholder="example@mail.com"> 
+      <label for="password">Password:</label> 
+      <input type="password" name="password" id="password"> 
+      <label for="confirm-password">Confirm Password:</label> 
+      <input type="password" name="confirm-password" id="confirm-password"> 
+      <label for="gender">Gender:</label> 
+      <select name="gender" id="gender" data-role="slider"> 
+        <option value="male">Male</option> 
+        <option value="female">Female</option> 
+      </select> 
+      <label for="dob">Date of Birth:</label> 
+      <input type="date" name="dob" id="dob"> 
+      <label for="phone">Phone Number:</label> 
+      <input type="tel" name="phone" id="phone" placeholder="123-456-7890"> 
+      <label for="address">Address:</label> 
+      <textarea name="address" id="address" placeholder="Street, City, State, ZIP"></textarea> 
+ 
+      <label for="country">Country:</label> 
+      <select name="country" id="country"> 
+        <option>India</option> 
+        <option>USA</option> 
+      </select> 
+      <label for="terms"> 
+        <input type="checkbox" name="terms" id="terms"> I accept the Terms and Conditions 
+      </label> 
+      <input type="submit" value="Register" class="ui-btn"> 
+    </form> 
+  </div> 
+</div> 
+</body> 
+</html> 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updating DOM using jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h1>Updating DOM with jQuery</h1>
+  
+  <!-- Button to trigger DOM update -->
+  <button id="updateButton">Click to Update Text</button>
+  
+  <!-- Paragraph whose text will be updated -->
+  <p id="message">This is the original text.</p>
+  
+  <script>
+    $(document).ready(function() {
+      $('#updateButton').click(function() {
+        const originalText = "This is the original text.";
+        const updatedText = "This text was updated using jQuery!";
+        
+        const currentText = $('#message').text();
+        
+        if (currentText === originalText) {
+          $('#message').text(updatedText);
+        } else {
+          $('#message').text(originalText);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
